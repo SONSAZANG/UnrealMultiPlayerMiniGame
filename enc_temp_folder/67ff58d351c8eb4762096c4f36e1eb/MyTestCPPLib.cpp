@@ -69,7 +69,7 @@ FString UMyTestCPPLib::CheckNumber(TArray<int32> server, TArray<int32> player, i
     }
     else
     {
-        answer = FString::Printf(TEXT("%s => %dS%dB"), *playerNumber, sCount, bCount);
+        answer = FString::Printf(TEXT("%s => %dS%dB => Win"), *playerNumber, sCount, bCount);
     }
     return answer;
 }

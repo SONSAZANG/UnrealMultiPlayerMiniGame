@@ -18,4 +18,7 @@ public:
 	int32 ThirdNumber;
 
 	virtual void Init() override;
+
+	UFUNCTION(BlueprintCallable) 
+	TArray<int32> GetServerNumber();
 };
