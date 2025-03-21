@@ -13,14 +13,13 @@ bool UMyTestCPPLib::CheckPlayerInput(FString input)
     
     if (input[0] == '/') 
     {    
-        UE_LOG(LogTemp, Warning, TEXT("true!! : %s"), *input);
+        if (input.Len() > 4) return false;
+        return true;
     }
     else
     {
-        UE_LOG(LogTemp, Warning, TEXT("false!! : %s"), *input);    
+        return false;    
     }
-    
-    return input[0] == '/';
 }
 
 TArray<int32> UMyTestCPPLib::GetPlayerNumber(FString input)
@@ -37,13 +36,12 @@ TArray<int32> UMyTestCPPLib::GetPlayerNumber(FString input)
     return playerNumber;
 }
 
-FString UMyTestCPPLib::CheckNumber(TArray<int32> server, TArray<int32> player, int32 outCount)
+FString UMyTestCPPLib::CheckNumber(TArray<int32> server, TArray<int32> player, int32& outCount)
 {
     int sCount = 0;
     int bCount = 0;
     FString answer;
     FString playerNumber;
-    // check strike
 
     for (int i = 0; i < 3; i++)
     {
@@ -69,6 +67,8 @@ FString UMyTestCPPLib::CheckNumber(TArray<int32> server, TArray<int32> player, i
     }
     else
     {
+        outCount++;
+        UE_LOG(LogTemp, Warning, TEXT("OutCount %d"), outCount);
         answer = FString::Printf(TEXT("%s => %dS%dB"), *playerNumber, sCount, bCount);
     }
     return answer;

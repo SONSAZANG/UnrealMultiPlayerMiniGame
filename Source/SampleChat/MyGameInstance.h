@@ -16,6 +16,8 @@ public:
 	int32 SecondNumber;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Server Number")
 	int32 ThirdNumber;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Player Out Count")
+	int32 PlayerOutCount;
 
 	virtual void Init() override;
 

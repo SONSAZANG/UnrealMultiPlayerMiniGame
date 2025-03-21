@@ -20,5 +20,5 @@ public:
     static TArray<int32> GetPlayerNumber(FString input);
 
     UFUNCTION(BlueprintCallable, Category = "MyTestCPPLib")
-    static FString CheckNumber(TArray<int32> server, TArray<int32> player, int32 outCount);
+    static FString CheckNumber(TArray<int32> server, TArray<int32> player, int32& outCount);
 };
